@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ちーろってぃのJavaScript練習帳</title>
+</head>
+<body>
+
+<header>
+<h1>ちーろってぃのJavaScript練習帳</h1>
+<p>こんばんは。JavaScriptの時間です。</p>
+</header>
+
+<main>
+
+<script type="text/javascript">
+
+document.write('<h1>Day1 30.08.2018</h1>');
+document.write('<h2>もじのかきかた</h2>');
+document.write('<p>JavaScriptでは、こうやって文字を書きます。</p>');
+document.write('<p>JavaScriptは計算ができます。</p>');
+document.write('<p>1年を365日とした場合...</p>');
+document.write('<p>1年は' + (365*24) + '時間です。</p>');
+document.write('<p>1年は' + (365*24*60) + '分です。</p>');
+document.write('<p>1年は' + (365*24*60*60) + '秒です。</p>');
+document.write('<p>21.5年は' + (21.5*365*24*60*60) + '秒です。</p>');
+document.write('<p>2018年9月7日午前1時は、ちーろってぃが生まれてから' + (21.5*365*24*60*60) + '秒後です。</p>');
+
+/*if (confirm('長いメッセージの場合は、\nエスケープシーケンスで改行しますか？')) {
+	alert('そうです');
+}   else {
+	alert('ちがいます');
+}*/
+
+document.write('<h1>Day2 06.09.2018</h1>');
+document.write('<h2>数字リストのつくりかた</h2>');
+document.write('<h3>～繰り返し構文whileとfor～</h3>');
+document.write('<p>好きな5の階乗</p>');
+
+</script>
+
+<ul>
+<li>while構文</li>
+<p>私の好きな5の階乗は</p>
+
+<select name = "kaijyo">
+<script type="text/javascript">
+var i = 1;
+while (i<=10000) {
+	document.write('<option value ="' + i + '">' + i + '</option>');
+	i=i*5;
+}
+</script>
+</select>
+
+<p>です</p>
+
+<li>for構文</li>
+<p>私の好きな5の階乗は</p>
+
+<select name = "kaijyo2">
+<script type="text/javascript">
+for (var i =1; i<=10000; i *=5) {
+	document.write('<option value="' + i + '">' + i + '</option>');
+}
+</script>
+</select>
+
+<p>です</p>
+
+</ul>
+
+<h2>文字リストのつくりかた</h2>
+<h3>～配列と連想配列～</h3>
+
+<ul>
+<li>配列
+<select name="ken"> <!--for dropdown-->
+<script type="text/javascript">
+var menus = new Array('埼玉県', '東京都', '神奈川県', '千葉県');
+for (var i=0; i<menus.length; i++) {
+	document.write('<option value="' + menus[i] + '">' + menus[i] + '</option>');
+	//document.write('<li><a href="' + menus[i] + '">' + menus[i] + '</a></li>'); It's not for dropdown.
+}
+</script>
+</select>
+
+<li>連想配列
+<ul class="list">
+<script type="text/javascript">
+var menus = {
+	'saitama.html':'埼玉県',
+	'tokyo.html':'東京都',
+	'kanagawa.html':'神奈川県',
+	'chiba.html':'千葉県	',
+}
+	
+for (var m in menus) {
+	document.write('<li><a href="' + m + '" title="' + m + 'に移動します">' + menus[m] + '</a></li>');
+}
+</script>
+</ul>
+
+<select name="age">
+<script type="text/javascript">
+for (var i=2; i<=20; i += 2) {
+	document.write('<option value="' + i + '">' + i + ' 個</option>');
+}
+</script>
+</select>
+</ul>
+
+<br>
+<img src="image/image1.jpg" style="float:left;">
+<p>これが float:left; にした場合、見ての通り文字の開始位置が画像の上部になって、文字が横いっぱいになって自動改行された場合も画像の隣からまた文字が開始されるよ。新聞みたいだね。</p>
+<p>当然文字だけじゃなくて display:block; になっている要素も全部回り込むよ。</p>
+<img src="image/image1.jpg" style="width:50px;">
+<p>画像を使ってもこの通り。</p>
+<p style="clear:left">縦幅超えたら元に戻る感じかなー。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+</main>
+
+<footer>コピーライト</footer>
+
+</body>
+</html>
